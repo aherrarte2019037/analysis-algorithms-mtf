@@ -1,14 +1,11 @@
 from pathlib import Path
-from importlib import import_module
-
-from algorithms import mtf, imtf
+from mtf_linked_list import mtf_linked, imtf_linked
 from cases import CASES, INITIAL_CONFIG
 
 ALGO_MAP = {
-    "mtf": mtf,
-    "imtf": imtf,
+    "mtf_linked": mtf_linked,
+    "imtf_linked": imtf_linked,
 }
-
 
 def generate_report(output_path: Path = Path("output.txt")) -> None:
     with output_path.open("w", encoding="utf-8") as fh:
@@ -22,7 +19,6 @@ def generate_report(output_path: Path = Path("output.txt")) -> None:
                 fh.write(line + "\n")
             fh.write(f"Total access cost ({algo_key.upper()}): {total}\n\n")
     print(f"Reporte generado en {output_path.resolve()}")
-
 
 if __name__ == "__main__":
     generate_report() 
