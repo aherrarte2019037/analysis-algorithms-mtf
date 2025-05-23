@@ -17,7 +17,7 @@ def generate_report(output_path: Path = Path("output.txt")) -> None:
             total, logs = algo_func(sequence, INITIAL_CONFIG)
             for line in logs:
                 fh.write(line + "\n")
-            fh.write(f"Total access cost ({algo_key.upper()}): {total}\n\n")
+            fh.write(f"Total access cost: {total}\n\n")
     print(f"Reporte generado en {output_path.resolve()}")
 
 if __name__ == "__main__":
